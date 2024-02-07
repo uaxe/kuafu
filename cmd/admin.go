@@ -4,22 +4,29 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/uaxe/kuafu/cmd/flags"
-	"github.com/uaxe/kuafu/internal/superadmin"
+	"github.com/uaxe/kuafu/provider"
+
+	"github.com/uaxe/kuafu/provider/superadmin"
 )
 
-func admin(f *flags.Admin) error {
-	if len(f.Addr) == 0 {
-		return fmt.Errorf("please provide a addr using the -addr flag")
+func admin(f *superadmin.AdminFlag) error {
+
+	if len(f.Host) == 0 {
+		return fmt.Errorf("please provide host using the -host flag")
 	}
-	if len(f.Provider) == 0 {
-		return fmt.Errorf("please provide a provider using the -provider flag")
+
+	if f.Port == 0 {
+		return fmt.Errorf("please provide port using the -port flag")
 	}
-	provider, err := superadmin.NewProvider(context.Background(), superadmin.ProviderType(f.Provider), f.Addr)
+
+	provide := provider.New(context.Background(), f.Type)
+
+	superAdminProvider, err := provide.SuperAdminProvider(f)
 	if err != nil {
 		return err
 	}
-	superAdmin, err := provider.GetSuperAdmin()
+
+	superAdmin, err := superAdminProvider.GetSuperAdmin()
 	if err != nil {
 		return err
 	}

@@ -21,7 +21,6 @@ func banner(_ *zcli.Cli) string {
 func Bootstrap() {
 	app = zcli.NewCli("KuaFu", "The Go Kuafu", version)
 	app.SetBannerFunction(banner)
-	app.PrintBanner()
 
 	cmd := app.NewSubCommand("version", "The Kuafu CLI version")
 	cmd.Action(func() error {
