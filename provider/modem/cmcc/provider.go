@@ -10,17 +10,17 @@ import (
 	"strings"
 
 	"github.com/uaxe/infra/cmd"
-	"github.com/uaxe/kuafu/provider/superadmin"
+	"github.com/uaxe/kuafu/provider/modem"
 )
 
 func init() {
-	if err := superadmin.Register(&CMCCProvider{
-		providerType: superadmin.CMCCProvider}); err != nil {
+	if err := modem.Register(&CMCCProvider{
+		providerType: modem.CMCCProvider}); err != nil {
 		panic(err)
 	}
 }
 
-var _ superadmin.Provider = (*CMCCProvider)(nil)
+var _ modem.Provider = (*CMCCProvider)(nil)
 
 type CMCCProvider struct {
 	providerType string
@@ -83,7 +83,7 @@ func defaultOptions() options {
 	}
 }
 
-func (s *CMCCProvider) New(ctx context.Context, f *superadmin.AdminFlag) (superadmin.Provider, error) {
+func (s *CMCCProvider) New(ctx context.Context, f *modem.AdminFlag) (modem.Provider, error) {
 	ss := &CMCCProvider{options: defaultOptions()}
 	if ctx != nil {
 		ss.ctx = ctx
@@ -104,12 +104,14 @@ func (s *CMCCProvider) Type() string {
 	return s.providerType
 }
 
-func (s *CMCCProvider) GetSuperAdmin() (*superadmin.SuperAdmin, error) {
+func (s *CMCCProvider) GetSuperAdmin() (*modem.SuperAdmin, error) {
 	macAddr, err := s.arp()
 	if err != nil {
 		return nil, err
 	}
-	ret := superadmin.SuperAdmin{MacAddr: macAddr}
+
+	ret := modem.SuperAdmin{MacAddr: macAddr}
+
 	if err = s.telnetEnable(macAddr); err != nil {
 		return nil, err
 	}

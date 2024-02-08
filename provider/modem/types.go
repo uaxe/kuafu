@@ -1,4 +1,4 @@
-package superadmin
+package modem
 
 const (
 	CMCCProvider string = "CMCC"

@@ -1,4 +1,4 @@
-package superadmin
+package modem
 
 type AdminFlag struct {
 	Type    string `yaml:"type" name:"type" description:"device type"`

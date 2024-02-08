@@ -1,4 +1,4 @@
-package superadmin
+package modem
 
 import (
 	"context"

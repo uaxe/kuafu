@@ -2,8 +2,7 @@ package provider
 
 import (
 	"context"
-
-	"github.com/uaxe/kuafu/provider/superadmin"
+	"github.com/uaxe/kuafu/provider/modem"
 )
 
 func New(ctx context.Context, providerType string) Provider {
@@ -22,8 +21,8 @@ func (p *_provider) Type() string {
 	return p.providerType
 }
 
-func (p *_provider) SuperAdminProvider(f *superadmin.AdminFlag) (superadmin.Provider, error) {
-	pp, err := superadmin.Get(func(s superadmin.Provider) bool { return p.Type() == s.Type() })
+func (p *_provider) SuperAdminProvider(f *modem.AdminFlag) (modem.Provider, error) {
+	pp, err := modem.Get(func(s modem.Provider) bool { return p.Type() == s.Type() })
 	if err != nil {
 		return nil, err
 	}

@@ -2,14 +2,12 @@ package cmd
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"github.com/uaxe/kuafu/provider"
-
-	"github.com/uaxe/kuafu/provider/superadmin"
+	"github.com/uaxe/kuafu/provider/modem"
 )
 
-func admin(f *superadmin.AdminFlag) error {
+func _admin(f *modem.AdminFlag) error {
 
 	if len(f.Host) == 0 {
 		return fmt.Errorf("please provide host using the -host flag")
@@ -30,12 +28,12 @@ func admin(f *superadmin.AdminFlag) error {
 	if err != nil {
 		return err
 	}
-	raw, err := json.MarshalIndent(superAdmin, "", "	")
-	if err != nil {
-		return err
-	}
 
-	fmt.Println(string(raw))
+	fmt.Println(fmt.Sprintf("mac_addr: %s", superAdmin.MacAddr))
+
+	fmt.Println(fmt.Sprintf("admin_name: %s", superAdmin.Name))
+
+	fmt.Println(fmt.Sprintf("admin_pwd: %s", superAdmin.Pwd))
 
 	return nil
 }
