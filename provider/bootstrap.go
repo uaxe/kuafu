@@ -23,13 +23,9 @@ func (p *_provider) Type() string {
 }
 
 func (p *_provider) SuperAdminProvider(f *superadmin.AdminFlag) (superadmin.Provider, error) {
-	return superadmin.Get(func(s superadmin.Provider) bool {
-		if p.Type() == s.Type() {
-			if err := s.New(p.ctx, f); err != nil {
-				return false
-			}
-			return true
-		}
-		return false
-	})
+	pp, err := superadmin.Get(func(s superadmin.Provider) bool { return p.Type() == s.Type() })
+	if err != nil {
+		return nil, err
+	}
+	return pp.New(p.ctx, f)
 }

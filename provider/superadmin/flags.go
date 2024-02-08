@@ -1,9 +1,10 @@
 package superadmin
 
 type AdminFlag struct {
-	Type string `yaml:"type" name:"type" description:"device type"`
-	Host string `yaml:"host" name:"host" description:"telnet host"`
-	Port int    `yaml:"port" name:"port" description:"telnet port"`
+	Type    string `yaml:"type" name:"type" description:"device type"`
+	MacAddr string `yaml:"maddr" name:"maddr" description:"mac addr"`
+	Host    string `yaml:"host" name:"host" description:"telnet host"`
+	Port    int    `yaml:"port" name:"port" description:"telnet port"`
 }
 
 func (*AdminFlag) Default() *AdminFlag {

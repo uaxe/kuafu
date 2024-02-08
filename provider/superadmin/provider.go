@@ -8,7 +8,7 @@ import (
 type Provider interface {
 	Type() string
 
-	New(context.Context, *AdminFlag) error
+	New(context.Context, *AdminFlag) (Provider, error)
 
 	GetSuperAdmin() (*SuperAdmin, error)
 }

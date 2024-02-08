@@ -2,4 +2,8 @@ module github.com/uaxe/kuafu
 
 go 1.21.6
 
-require github.com/uaxe/infra v0.0.0-20240207084124-90d5104dd159 // indirect
+require (
+	github.com/reiver/go-oi v1.0.0 // indirect
+	github.com/reiver/go-telnet v0.0.0-20180421082511-9ff0b2ab096e // indirect
+	github.com/uaxe/infra v0.0.0-20240208003623-8039306374a9 // indirect
+)
