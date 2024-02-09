@@ -1,12 +1,2 @@
-github.com/reiver/go-oi v1.0.0 h1:nvECWD7LF+vOs8leNGV/ww+F2iZKf3EYjYZ527turzM=
-github.com/reiver/go-oi v1.0.0/go.mod h1:RrDBct90BAhoDTxB1fenZwfykqeGvhI6LsNfStJoEkI=
-github.com/reiver/go-telnet v0.0.0-20180421082511-9ff0b2ab096e h1:quuzZLi72kkJjl+f5AQ93FMcadG19WkS7MO6TXFOSas=
-github.com/reiver/go-telnet v0.0.0-20180421082511-9ff0b2ab096e/go.mod h1:+5vNVvEWwEIx86DB9Ke/+a5wBI464eDRo3eF0LcfpWg=
-github.com/uaxe/infra v0.0.0-20240206032506-9494885f24db h1:x4pECZey0bO6Np3OHQbuHBMK7gUfNRXplx8E8jNnz40=
-github.com/uaxe/infra v0.0.0-20240206032506-9494885f24db/go.mod h1:+XyHaMGxVLbrM6A6xVwPlj2amfiNFb6PXXx7CtDfJQw=
-github.com/uaxe/infra v0.0.0-20240207084124-90d5104dd159 h1:2Njyg9Tg+0ajW4J7OT1o8pIcMgrp0bxMU5giPS19YlE=
-github.com/uaxe/infra v0.0.0-20240207084124-90d5104dd159/go.mod h1:+XyHaMGxVLbrM6A6xVwPlj2amfiNFb6PXXx7CtDfJQw=
 github.com/uaxe/infra v0.0.0-20240208003623-8039306374a9 h1:PEmdv8WiE4JqFhn3zcTmyzRExQltkfyID3iDOt6DqfQ=
 github.com/uaxe/infra v0.0.0-20240208003623-8039306374a9/go.mod h1:+XyHaMGxVLbrM6A6xVwPlj2amfiNFb6PXXx7CtDfJQw=
-golang.org/x/text v0.14.0 h1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=
-golang.org/x/text v0.14.0/go.mod h1:18ZOQIKpY8NJVqYksKHtTdi31H5itFRjB5/qKTNYzSU=

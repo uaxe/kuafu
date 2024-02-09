@@ -1,22 +1,22 @@
 
-English | [中文](./README_cn.md)
+中文 | [English](./README.md)
 
-### kuafu
-This is a tool to obtain the router super administrator password
+### kuafu (夸父)
+这是一个获取路由器超级管理员密码的工具
 
 ---
-#### Install 
+#### 安装
 
 ```shell
 go get github.com/uaxe/kuafu
 ```
 
-Commond help: 
+命令行帮助:
 ```shell
 kuafu -help
 ```
 
-Commond help output:
+命令行帮助输出:
 ```shell
 Kuafu CLI 0.0.1
 
@@ -30,24 +30,24 @@ Flags:
   -help
     	Get help on the 'kuafu' command.
 ```
-#### Get modem super administrator password
+#### 获取光猫超管密码
 
 ```shell
 kuafu modem admin 
 ```
 
-Commond modem admin output:
+获取光猫超管密码输出:
 ```shell
 mac_addr: 7c:fc:fd:2:17:a0
 admin_name: CMCCAdmin
 admin_pwd: aDm8H%MdAD*5Vz2Hh
 ```
-You can view the parameters
+查看参数信息
 ```shell
 kuafu modem admin -help
 ```
 
-View the parameters output:
+查看参数信息输出:
 ```shell
 Kuafu CLI 0.0.1
 
@@ -57,13 +57,13 @@ Flags:
   -help
     	Get help on the 'kuafu modem admin' command.
   -host string
-    	telnet host (default "192.168.1.1")
+    	telnet host (default "192.168.1.1") 路由器IP
   -maddr string
-    	mac addr
+    	mac addr   指定路由器Mac地址
   -port int
-    	telnet port (default 23)
+    	telnet port (default 23)  telnet默认的端口
   -type string
-    	device type (default "CMCC")
+    	device type (default "CMCC") 设备类型，目前默认支持CMCC（移动）
 ```
 
 
