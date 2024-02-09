@@ -8,3 +8,5 @@ github.com/uaxe/infra v0.0.0-20240207084124-90d5104dd159 h1:2Njyg9Tg+0ajW4J7OT1o
 github.com/uaxe/infra v0.0.0-20240207084124-90d5104dd159/go.mod h1:+XyHaMGxVLbrM6A6xVwPlj2amfiNFb6PXXx7CtDfJQw=
 github.com/uaxe/infra v0.0.0-20240208003623-8039306374a9 h1:PEmdv8WiE4JqFhn3zcTmyzRExQltkfyID3iDOt6DqfQ=
 github.com/uaxe/infra v0.0.0-20240208003623-8039306374a9/go.mod h1:+XyHaMGxVLbrM6A6xVwPlj2amfiNFb6PXXx7CtDfJQw=
+golang.org/x/text v0.14.0 h1:ScX5w1eTa3QqT8oi6+ziP7dTV1S2+ALU0bI+0zXKWiQ=
+golang.org/x/text v0.14.0/go.mod h1:18ZOQIKpY8NJVqYksKHtTdi31H5itFRjB5/qKTNYzSU=
