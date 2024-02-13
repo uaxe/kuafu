@@ -2,7 +2,10 @@ package cmd
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"os"
+
 	"github.com/uaxe/kuafu/provider"
 	"github.com/uaxe/kuafu/provider/modem"
 )
@@ -29,11 +32,15 @@ func _admin(f *modem.AdminFlag) error {
 		return err
 	}
 
-	fmt.Println(fmt.Sprintf("mac_addr: %s", superAdmin.MacAddr))
+	b, err := json.MarshalIndent(superAdmin, "", " ")
+	if err != nil {
+		return err
+	}
 
-	fmt.Println(fmt.Sprintf("admin_name: %s", superAdmin.Name))
-
-	fmt.Println(fmt.Sprintf("admin_pwd: %s", superAdmin.Pwd))
+	_, err = fmt.Fprint(os.Stdout, string(b), "\n")
+	if err != nil {
+		return err
+	}
 
 	return nil
 }

@@ -2,9 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/uaxe/infra/color"
 	"github.com/uaxe/infra/zcli"
-	"os"
 )
 
 var (
@@ -24,7 +25,8 @@ func Bootstrap() {
 
 	ver := app.NewSubCommand("version", "The Kuafu CLI version")
 	ver.Action(func() error {
-		fmt.Println(fmt.Sprintf("%s %s", color.Green("Kuafu CLI"), color.Cyan(version)))
+		verText := fmt.Sprintf("%s %s", color.Green("Kuafu CLI"), color.Cyan(version))
+		fmt.Println(verText)
 		return nil
 	})
 

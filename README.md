@@ -1,17 +1,17 @@
 
-English | [中文](./README_cn.md)
+English | [中文](./README_CN.md)
 
 ### kuafu
 This is a tool to obtain the router super administrator password
 
 ---
-#### Install 
+#### Install
 
 ```shell
 go get github.com/uaxe/kuafu
 ```
 
-Commond help: 
+Commond help:
 ```shell
 kuafu -help
 ```
@@ -33,14 +33,19 @@ Flags:
 #### Get modem super administrator password
 
 ```shell
-kuafu modem admin 
+kuafu modem admin
 ```
 
 Commond modem admin output:
-```shell
-mac_addr: 7c:fc:fd:2:17:a0
-admin_name: CMCCAdmin
-admin_pwd: aDm8H%MdAD*5Vz2Hh
+```json
+{
+ "addr": "192.168.1.1",
+ "device": "F607Za",
+ "admin_name": "cuadmin",
+ "admin_pwd": "cuadmin",
+ "telnet_name": "root",
+ "telnet_pwd": "Zte521"
+}
 ```
 You can view the parameters
 ```shell
@@ -51,7 +56,7 @@ View the parameters output:
 ```shell
 Kuafu CLI 0.0.1
 
-KuaFu modem admin - The Kuafu modem admin
+Kuafu modem admin - The Kuafu modem admin
 Flags:
 
   -help
@@ -65,7 +70,3 @@ Flags:
   -type string
     	device type (default "CMCC")
 ```
-
-
-
-

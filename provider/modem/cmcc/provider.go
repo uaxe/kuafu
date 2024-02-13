@@ -2,8 +2,13 @@ package cmcc
 
 import (
 	"context"
-	"github.com/uaxe/kuafu/provider/modem"
 	"net/http"
+	"strings"
+
+	"github.com/PuerkitoBio/goquery"
+
+	"github.com/uaxe/kuafu/provider/modem"
+	"golang.org/x/net/html"
 )
 
 func init() {
@@ -84,9 +89,6 @@ func (s *CMCCProvider) New(ctx context.Context, f *modem.AdminFlag) (modem.Provi
 	if f.Host != "" {
 		ss.host = f.Host
 	}
-	if f.MacAddr != "" {
-		ss.macAddr = f.MacAddr
-	}
 	if f.Port != 0 {
 		ss.port = f.Port
 	}
@@ -95,4 +97,9 @@ func (s *CMCCProvider) New(ctx context.Context, f *modem.AdminFlag) (modem.Provi
 
 func (s *CMCCProvider) Type() string {
 	return s.providerType
+}
+
+func (s *CMCCProvider) IsMe(root *html.Node) bool {
+	doc := goquery.NewDocumentFromNode(root)
+	return strings.Contains(doc.Text(), "中国移动")
 }

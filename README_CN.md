@@ -33,14 +33,19 @@ Flags:
 #### 获取光猫超管密码
 
 ```shell
-kuafu modem admin 
+kuafu modem admin
 ```
 
 获取光猫超管密码输出:
-```shell
-mac_addr: 7c:fc:fd:2:17:a0
-admin_name: CMCCAdmin
-admin_pwd: aDm8H%MdAD*5Vz2Hh
+```json
+{
+ "addr": "192.168.1.1",
+ "device": "F607Za",
+ "admin_name": "cuadmin",
+ "admin_pwd": "cuadmin",
+ "telnet_name": "root",
+ "telnet_pwd": "Zte521"
+}
 ```
 查看参数信息
 ```shell
@@ -51,7 +56,7 @@ kuafu modem admin -help
 ```shell
 Kuafu CLI 0.0.1
 
-KuaFu modem admin - The Kuafu modem admin
+Kuafu modem admin - The Kuafu modem admin
 Flags:
 
   -help
@@ -65,7 +70,3 @@ Flags:
   -type string
     	device type (default "CMCC") 设备类型，目前默认支持CMCC（移动）
 ```
-
-
-
-

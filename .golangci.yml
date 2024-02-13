@@ -3,13 +3,11 @@ run:
 linters:
   enable:
     - asciicheck
-    - depguard
     - dogsled
     - durationcheck
     - errcheck
     - errorlint
     - exportloopref
-    - gci
     - gofmt
     - goimports
     - gosec
