@@ -6,7 +6,6 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-
 	"github.com/uaxe/kuafu/provider/modem"
 	"golang.org/x/net/html"
 )
