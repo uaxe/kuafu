@@ -1,4 +1,9 @@
 
+[![Build Status](https://github.com/uaxe/kuafu/workflows/GoTests/badge.svg?branch=master)](https://github.com/uaxe/kuafu/actions?query=branch%3Amaster)
+[![codecov](https://codecov.io/gh/uaxe/kuafu/graph/badge.svg)](https://codecov.io/gh/uaxe/kuafu)
+[![GoDoc](https://pkg.go.dev/badge/github.com/uaxe/kuafu?status.svg)](https://pkg.go.dev/github.com/uaxe/kuafu?tab=doc)
+
+
 English | [中文](./README_CN.md)
 
 ### kuafu

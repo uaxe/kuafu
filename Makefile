@@ -75,3 +75,14 @@ tools:
 		$(GO) install golang.org/x/lint/golint; \
 		$(GO) install github.com/client9/misspell/cmd/misspell; \
 	fi
+
+.PHONY: git-hook
+git-hook:
+	git config core.hooksPath .githooks
+	chmod +x .githooks/pre-commit
+	chmod +x .githooks/pre-push
+	@if [ $(GO_VERSION) -gt 15 ]; then \
+		$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint@latest; \
+	elif [ $(GO_VERSION) -lt 16 ]; then \
+		$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint; \
+	fi
